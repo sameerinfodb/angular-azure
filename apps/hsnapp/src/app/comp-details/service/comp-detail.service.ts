@@ -1,3 +1,4 @@
+import { HostDetails } from './../model/host-details.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
@@ -10,8 +11,8 @@ export class CompDetailService {
 
   constructor(private http: HttpClient) {}
 
-  getClientHostName(): Observable<string> {
-    const response = this.http.get<string>(this.URL);
+  getClientHostName(): Observable<HostDetails> {
+    const response = this.http.get<HostDetails>(this.URL);
     return response;
   }
 }

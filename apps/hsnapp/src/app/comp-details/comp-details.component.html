@@ -1,6 +1,6 @@
-<div *ngIf="error; else success">
+<ng-template *ngIf="error; else success">
     Please install the client agent service or start the client agent service.
-</div>
-<div #success>
-    <div>Your are Computer Name is : {{ hostName.hostName }} !</div>
-</div>
+</ng-template>
+<ng-template #success>
+    <div>Your are Computer Name is : {{ hostDetails.hostName }} !</div>
+</ng-template>

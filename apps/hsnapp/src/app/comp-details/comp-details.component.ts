@@ -1,3 +1,4 @@
+import { HostDetails } from './model/host-details.model';
 import { CompDetailService } from './service/comp-detail.service';
 import { Component, OnInit } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
@@ -7,7 +8,7 @@ import { Meta } from '@angular/platform-browser';
   styleUrls: ['./comp-details.component.css']
 })
 export class CompDetailsComponent implements OnInit {
-  hostName: string;
+  hostDetails: HostDetails = { hostName: '' };
   error: boolean;
   constructor(
     private apiService: CompDetailService,
@@ -17,7 +18,7 @@ export class CompDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.getClientHostName().subscribe(
       data => {
-        this.hostName = data;
+        this.hostDetails = data as HostDetails;
         console.log(data);
       },
       error => {
