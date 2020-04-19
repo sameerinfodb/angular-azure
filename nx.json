@@ -18,5 +18,13 @@
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "hsnapp": {
+      "tags": []
+    },
+    "hsnapp-e2e": {
+      "tags": [],
+      "implicitDependencies": ["hsnapp"]
+    }
+  }
 }
